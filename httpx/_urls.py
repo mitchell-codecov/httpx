@@ -576,7 +576,7 @@ class QueryParams(typing.Mapping[str, str]):
         """
         return self._dict.keys()
 
-    def values(self) -> typing.ValuesView:
+    def values(self) -> typing.ValuesView[str]:
         """
         Return all the values in the query params. If a key occurs more than once
         only the first item for that key is returned.
