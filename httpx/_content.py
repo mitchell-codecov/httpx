@@ -126,11 +126,9 @@ def encode_content(
             headers = {"Content-Length": str(content_length_or_none)}
         return headers, IteratorByteStream(content)  # type: ignore
 
-    elif isinstance(content, AsyncIterable):
+    else:
         headers = {"Transfer-Encoding": "chunked"}
         return headers, AsyncIteratorByteStream(content)
-
-    raise TypeError(f"Unexpected type for 'content', {type(content)!r}")
 
 
 def encode_urlencoded_data(
