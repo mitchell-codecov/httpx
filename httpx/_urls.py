@@ -83,12 +83,8 @@ class URL:
                 # We don't want to normalize relative URLs, since doing so
                 # removes any leading `../` portion.
                 self._uri_reference = self._uri_reference.normalize()
-        elif isinstance(url, URL):
-            self._uri_reference = url._uri_reference
         else:
-            raise TypeError(
-                f"Invalid type for url.  Expected str or httpx.URL, got {type(url)}: {url!r}"
-            )
+            self._uri_reference = url._uri_reference
 
         # Perform port normalization, following the WHATWG spec for default ports.
         #
