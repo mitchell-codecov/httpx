@@ -565,7 +565,7 @@ class QueryParams(typing.Mapping[str, str]):
                 for k, v in dict_value.items()
             }
 
-    def keys(self) -> typing.KeysView:
+    def keys(self) -> typing.KeysView[str]:
         """
         Return all the keys in the query params.
 
