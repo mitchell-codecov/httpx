@@ -1112,7 +1112,7 @@ class Cookies(MutableMapping[str, str]):
         Delete all cookies. Optionally include a domain and path in
         order to only delete a subset of all the cookies.
         """
-        args = []
+        args: typing.List[str] = []
         if domain is not None:
             args.append(domain)
         if path is not None:
