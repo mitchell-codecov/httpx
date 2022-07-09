@@ -8,6 +8,7 @@ from typing import (
     Dict,
     Iterable,
     Iterator,
+    List,
     Optional,
     Tuple,
     Union,
@@ -134,7 +135,7 @@ def encode_content(
 def encode_urlencoded_data(
     data: RequestData,
 ) -> Tuple[Dict[str, str], ByteStream]:
-    plain_data = []
+    plain_data: List[Tuple[str, str]] = []
     for key, value in data.items():
         if isinstance(value, (list, tuple)):
             plain_data.extend([(key, primitive_value_to_str(item)) for item in value])
