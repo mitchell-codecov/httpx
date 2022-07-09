@@ -8,6 +8,7 @@ from ._types import (
     AsyncByteStream,
     FileContent,
     FileTypes,
+    RequestData,
     RequestFiles,
     SyncByteStream,
 )
@@ -176,7 +177,7 @@ class MultipartStream(SyncByteStream, AsyncByteStream):
     """
 
     def __init__(
-        self, data: dict, files: RequestFiles, boundary: typing.Optional[bytes] = None
+        self, data: RequestData, files: RequestFiles, boundary: typing.Optional[bytes] = None
     ) -> None:
         if boundary is None:
             boundary = binascii.hexlify(os.urandom(16))
@@ -188,7 +189,7 @@ class MultipartStream(SyncByteStream, AsyncByteStream):
         self.fields = list(self._iter_fields(data, files))
 
     def _iter_fields(
-        self, data: dict, files: RequestFiles
+        self, data: RequestData, files: RequestFiles
     ) -> typing.Iterator[typing.Union[FileField, DataField]]:
         for name, value in data.items():
             if isinstance(value, list):
