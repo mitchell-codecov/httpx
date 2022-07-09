@@ -45,6 +45,6 @@ else:
         context.options |= ssl.OP_NO_TLSv1_1
 
 
-def iscoroutine(coro: object) -> "typing_extensions.TypeGuard[typing.Coroutine]":
+def iscoroutine(coro: object) -> "typing_extensions.TypeGuard[typing.Coroutine[typing.Any, typing.Any, typing.Any]]":
     # Drop when this is resolved: https://github.com/python/typeshed/pull/8104
     return asyncio.iscoroutine(coro)
