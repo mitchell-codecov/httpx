@@ -1172,9 +1172,9 @@ class Cookies(MutableMapping):
             )
             self.request = request
 
-        def add_unredirected_header(self, key: str, value: str) -> None:
-            super().add_unredirected_header(key, value)
-            self.request.headers[key] = value
+        def add_unredirected_header(self, key: str, val: str) -> None:
+            super().add_unredirected_header(key, val)
+            self.request.headers[key] = val
 
     class _CookieCompatResponse:
         """
