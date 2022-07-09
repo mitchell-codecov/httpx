@@ -188,7 +188,7 @@ class Headers(typing.MutableMapping[str, str]):
         if not split_commas:
             return values
 
-        split_values = []
+        split_values: typing.List[str] = []
         for value in values:
             split_values.extend([item.strip() for item in value.split(",")])
         return split_values
