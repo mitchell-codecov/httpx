@@ -176,9 +176,9 @@ class SSLConfig:
         if self.cert is not None:
             if isinstance(self.cert, str):
                 ssl_context.load_cert_chain(certfile=self.cert)
-            elif isinstance(self.cert, tuple) and len(self.cert) == 2:
+            elif len(self.cert) == 2:
                 ssl_context.load_cert_chain(certfile=self.cert[0], keyfile=self.cert[1])
-            elif isinstance(self.cert, tuple) and len(self.cert) == 3:
+            elif len(self.cert) == 3:
                 ssl_context.load_cert_chain(
                     certfile=self.cert[0],
                     keyfile=self.cert[1],
