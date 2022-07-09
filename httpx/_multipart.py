@@ -29,7 +29,7 @@ class DataField:
     def __init__(
         self, name: str, value: typing.Union[str, bytes, int, float, None]
     ) -> None:
-        if value is not None and not isinstance(value, (str, bytes, int, float)):
+        if value is not None:
             raise TypeError(
                 f"Invalid type for value. Expected primitive type, got {type(value)}: {value!r}"
             )
