@@ -315,7 +315,7 @@ class Request:
         files: typing.Optional[RequestFiles] = None,
         json: typing.Optional[typing.Any] = None,
         stream: typing.Union[SyncByteStream, AsyncByteStream, None] = None,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ):
         self.method = (
             method.decode("ascii").upper()
@@ -440,7 +440,7 @@ class Response:
         json: typing.Any = None,
         stream: typing.Union[SyncByteStream, AsyncByteStream, None] = None,
         request: typing.Optional[Request] = None,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
         history: typing.Optional[typing.List["Response"]] = None,
         default_encoding: typing.Union[str, typing.Callable[[bytes], str]] = "utf-8",
     ):

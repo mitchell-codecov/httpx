@@ -328,7 +328,7 @@ class BaseClient:
         headers: typing.Optional[HeaderTypes] = None,
         cookies: typing.Optional[CookieTypes] = None,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Request:
         """
         Build and return a request instance.
@@ -773,7 +773,7 @@ class Client(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Build and send a request.
@@ -830,7 +830,7 @@ class Client(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> typing.Iterator[Response]:
         """
         Alternative to `httpx.request()` that streams the response body
@@ -1029,7 +1029,7 @@ class Client(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `GET` request.
@@ -1058,7 +1058,7 @@ class Client(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send an `OPTIONS` request.
@@ -1087,7 +1087,7 @@ class Client(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `HEAD` request.
@@ -1120,7 +1120,7 @@ class Client(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `POST` request.
@@ -1157,7 +1157,7 @@ class Client(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `PUT` request.
@@ -1194,7 +1194,7 @@ class Client(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `PATCH` request.
@@ -1227,7 +1227,7 @@ class Client(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `DELETE` request.
@@ -1493,7 +1493,7 @@ class AsyncClient(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Build and send a request.
@@ -1542,7 +1542,7 @@ class AsyncClient(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> typing.AsyncIterator[Response]:
         """
         Alternative to `httpx.request()` that streams the response body
@@ -1741,7 +1741,7 @@ class AsyncClient(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault, None] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `GET` request.
@@ -1770,7 +1770,7 @@ class AsyncClient(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send an `OPTIONS` request.
@@ -1799,7 +1799,7 @@ class AsyncClient(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `HEAD` request.
@@ -1832,7 +1832,7 @@ class AsyncClient(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `POST` request.
@@ -1869,7 +1869,7 @@ class AsyncClient(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `PUT` request.
@@ -1906,7 +1906,7 @@ class AsyncClient(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `PATCH` request.
@@ -1939,7 +1939,7 @@ class AsyncClient(BaseClient):
         auth: typing.Union[AuthTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
         follow_redirects: typing.Union[bool, UseClientDefault] = USE_CLIENT_DEFAULT,
         timeout: typing.Union[TimeoutTypes, UseClientDefault] = USE_CLIENT_DEFAULT,
-        extensions: typing.Optional[dict] = None,
+        extensions: typing.Optional[typing.Dict[str, bytes]] = None,
     ) -> Response:
         """
         Send a `DELETE` request.
