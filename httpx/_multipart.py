@@ -29,10 +29,6 @@ class DataField:
     def __init__(
         self, name: str, value: typing.Union[str, bytes, int, float, None]
     ) -> None:
-        if not isinstance(name, str):
-            raise TypeError(
-                f"Invalid type for name. Expected str, got {type(name)}: {name!r}"
-            )
         if value is not None and not isinstance(value, (str, bytes, int, float)):
             raise TypeError(
                 f"Invalid type for value. Expected primitive type, got {type(value)}: {value!r}"
