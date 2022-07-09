@@ -754,7 +754,7 @@ class Response:
         Returns the parsed header links of the response, if any
         """
         header = self.headers.get("link")
-        ldict = {}
+        ldict: typing.Dict[typing.Optional[str], typing.Dict[str, str]] = {}
         if header:
             links = parse_header_links(header)
             for link in links:
