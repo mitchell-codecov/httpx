@@ -217,7 +217,7 @@ class BaseClient:
                 }
             return {}
         if isinstance(proxies, dict):
-            new_proxies = {}
+            new_proxies: typing.Dict[str, typing.Optional[Proxy]] = {}
             for key, value in proxies.items():
                 proxy = Proxy(url=value) if isinstance(value, (str, URL)) else value
                 new_proxies[str(key)] = proxy
